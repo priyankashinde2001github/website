@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        :root{
+            --main-color:#d3ad7f;
+            --black:rgb(0, 0, 0);
+            --bg:#010103;
+           --border: 1rem solid rgba(255, 255,255,3);
+        }
+        *{
+            font-family:'roboto',sans-serif;
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            text-decoration: none;
+            text-transform: capitalize;
+            transition: 2px linear;
+          
+        }
+
+html{
+    font-size: 75%;
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+
+}
+html::-webkit-scrollbar{
+    width:2rem
+}
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+html::-webkit-scrollbar-thumb{
+    background: #fff;
+    border-radius: 5rem;
+}
+body{
+    background: var(--bg);
+
+}
+section{
+padding:1rem 7%;
+}
+
+
+.header{
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+    border-bottom: var(--border);
+    position: fixed;
+    top: 0;left: 0;right: 0;
+    z-index: 1000;
+
+}
+.header .logo img{
+height: 6rem;
+}
+.header .navbar a{
+margin: 0 1rem;
+font-size: 1.6rem;
+color: #fff;
+
+}
+.header .navbar a:hover{
+    color: var(--main-color);
+    border-radius: 1rem solid var(--main-color);
+    padding-bottom: 5rem;
+    
+}
+.header .icons div{
+
+color: #fff;
+cursor: pointer;
+font-size: 2.5rem;
+margin-left: 2rem;
+}
+.header .icons div:hover{
+color: var(--main-color);
+}
+
+#menu-btn{
+    display: none;
+
+}
+.header .search-form{
+    position: absolute;
+    top:115%;right:3%;
+    background: #fff;
+    width: 30rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    
+}
+.header .search-form input{
+    height: 100%;
+    width: 100%;
+    font-size: 1.6rem;
+    color: var(--black);
+    padding: 1rem;
+    text-decoration: none;
+}
+.header .search-form label{
+    cursor: pointer;
+    font-size: 2.2rem;
+    margin-left: 1.5rem;
+    color: var(--black);
+}
+.header .search-form label:hover{
+    color: var(--main-color);
+}
+.home{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url("wallp1.jpg")no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+.home .content{
+    max-width: 60rem;
+}
+.home .content marquee{
+    font-size: 5rem;
+    text-transform:italic;
+    color:#fff;
+}
+.home .content p{
+    font-size: 2rem;
+    font-weight: lighter;
+    line-height: 1.8;
+    padding: 1rem 0;
+    color:#eee;
+}
+.heading{
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    padding-bottom: 3.5rem;
+    font-size: 4rem;
+}
+.heading span{
+    color: var(--main-color);
+    text-transform: uppercase;
+}
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1rem 1rem;
+    font-size: 1,7rem;
+    color: #fff;
+    background: var(--main-color);
+    cursor: pointer;
+}
+.btn:hover
+{
+   letter-spacing: 0.5rem;
+}
+.about .row{
+    display: flex;
+    align-items: center;
+    background: var(--black);
+   flex-wrap: wrap;
+
+}
+.about .row .image{
+    flex: 1 1 35rem;
+
+}
+.about .row .image img{
+    width:100%;
+height:200%;
+    
+}
+.about .row .content{
+    flex: 1 1 45rem;
+    padding: 2rem;
+}
+.about .row .content h3{
+    font-size: 3rem;
+    color: #fff;
+
+    
+}
+.about .row .content p{
+    font-size: 1.6rem;
+    color: #eee;
+    padding: 1rem 0;
+    line-height: 1.8;
+    
+}
+.menu .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+    gap: 1.5rem;
+}
+.menu .box-container .box{
+    text-align: center;
+    border: var(--border);
+
+}
+.menu .box-container .box img{
+    height: 15rem;
+}
+.menu .box-container .box img:hover{
+transform: scale(1.2);
+}
+.menu .box-container .box h3{
+    color:#fff;
+    font-size: 2rem;
+    padding: 1rem 0;
+
+}
+.menu .box-container .box h1{
+    color:#fff;
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+.menu .box-container .box .price{
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 5rem 0;
+ 
+}
+.menu .box-container .box .price span{
+    color: #fff;
+    font-size: 2.5rem;
+   text-decoration: line-through;
+}
+.menu .box-container .box:hover{
+    background: #fff;
+
+}
+.menu .box-container .box:hover > *{
+    color:var(--black);
+}
+.product .box-container{
+     display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(20rem,1fr));
+    gap: 1.5rem;
+}
+.product .box-container .box{
+    text-align: center;
+    border: var(--border);
+    padding: 2rem ;
+
+}
+.product .box-container .box:hover{
+background: var(--main-color);
+
+}
+.product .box-container  .box .image {
+    padding: 1.5rem;
+
+}
+.product .box-container  .box .image img{
+height: 15rem;
+}
+.product .box-container .box .content h3{
+    color: #fff;
+font-size: 2.5rem;
+}
+.product .box-container .box .content .price{
+    color: #fff;
+    font-size: 2.5rem;
+}
+.product .box-container .box .content .price span{
+    text-decoration: line-through;
+    font-weight: lighter;
+    font-size: 1.5rem;   
+}
+.contact .row{
+    display: flex;
+    align-items: center;
+    background: var(--black);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.contact .row .map{
+ flex: 1 1 45rem;
+width: 100%;
+object-fit: cover;
+
+}
+.contact .row form{
+    flex: 1 1 45rem;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+.contact .row form h3{
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    color: #fff;
+}
+.contact .row form .inputbox{
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background: var(bg);
+    border: var(--border);
+}
+.contact .row form .inputbox  span{
+    color: #fff;
+    font-size: 2rem;
+    padding-left: 2rem;
+}
+.contact .row form .inputbox  input{
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.7rem;
+    color: #fff;
+    text-transform: none;
+    background: none;
+}
+.blog .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(20rem,1fr));
+    gap: 1.5rem;
+}
+.blog .box-container .box{
+    border: var(--border);
+
+}
+.blog .box-container .box .image{
+    height: 25rem;
+    overflow: hidden;
+    width: 90%;
+
+}
+.blog .box-container .box .image img{
+    height: 90%;
+    object-fit: cover;
+    width: 90%;
+    
+}
+.blog .box-container .box:hover .image img{
+transform: scale(1.2);
+}
+.blog .box-container .box:hover .image img{
+transform: scale(1.2);
+}
+.blog .box-container .box .content{
+    padding: 2rem;
+
+}
+.blog .box-container .box .content .title{
+font-size: 2.5rem;
+line-height: 1.5;
+color: #fff;
+
+}
+.blog .box-container .box .content .title:hover{
+    color: var(--main-color);
+    
+}
+.blog .box-container .box .content  span{
+    color:var(--main-color);
+    display: block;
+    padding-top: 1rem;
+    font-size: 2rem;
+}
+.blog .box-container .box .content p{
+    font-size: 1.6rem;
+    line-height: 1.8;
+    color: #ccc;
+}
+.footer{
+    background: var(--black);
+    text-align: center;
+
+}
+.footer .foot{
+    padding: 1rem 0;
+}
+.footer .foot  a{
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    color: #fff;
+    border: var(--border);
+    margin: 3rem;
+    border-radius: 30%;
+}
+.footer .foot h1{
+color:#fff;
+}
+
+.footer .foot a:hover{
+    background-color: var(--main-color);
+
+}
+.footer .link{
+    display: flex;
+justify-content: center;
+flex-wrap: wrap;
+padding: 1.5rem 0;
+gap: 1rem;
+}
+.footer .link a{
+    padding: 1rem 1rem;
+    color: #fff;
+    border: var(--border);
+    font-size: 1.5rem;
+}
+.footer .link a:hover{
+    color: var(--main-color);
+}
+
+    </style>
+</head>
+<body>
+    
+<header class="header">
+    <a href="#" class="logo">
+   <img src="logo1.jpg"></a>
+    <nav class="navbar">
+        <a href="#home">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#menu">MENU</a>
+        <a href="#product">PRODUCT</a>
+        <a href="#contact">CONTACT</a>
+        <a href="#blog">BLOG</a>
+    </nav>
+
+   <div class="icons">
+        <div class="fas fa-search" id="search-btn"></div>
+        <div class="fas fa-shopping-cart" id="cart-btn"></div>
+        <div class="fas fa-bars" id="menu-btn"></div>
+    </div>
+
+ <div class="search-form">
+    <input type="search" id="search-box" placeholder="search here..">
+    <label for="search-box" class="fas fa-search"></label>
+   </div>
+  </header>
+
+
+  <section class="home" id="home">
+<div class="content">
+    <marquee behavior="scroll" direction="left" scrollamount="10">get coffee! be happy</marquee>
+    <p>A cup of coffee lasts only a moment, but that moment makes your day better.</p>
+<a href="#" class="btn">get yours now</a>
+</div>
+  </section>
+<section class="about" id="about">
+    <h1 class="heading"> <span>about</span> us</h1>
+<div class="row">
+    <div class="image">
+        <img src="aboutimg.jpeg" alt="">
+    </div>
+    <div class="content">
+        <h3>what makes coffee special?</h3>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum maiores suscipit hic, alias iusto harum reprehenderit. Consequuntur a quibusdam dolorem provident sapiente sed, consequatur eveniet? Unde distinctio eligendi totam similique.</p>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum maiores suscipit hic, alias iusto harum reprehenderit. Consequuntur a quibusdam dolorem provident sapiente sed, consequatur eveniet? Unde distinctio eligendi totam similique.</p>
+        <a href="#" class="btn">learn more</a>
+    </div>
+</div>
+  </section>
+
+<section class="menu" id="menu">
+    <h1 class="heading"> our<span> menu</span></h1>
+    <div class="box-container">
+        <div class="box">
+            <h1>-coffee-</h1>
+            <img src="img1.webp" alt="">
+            <h1>latte<span> $4</span></h1>
+            <img src="img4.webp" >
+           <h1>espresso<span> $3</span></h1>
+            <img src="img2.jpg">
+       <h1>black coffe<span> $3</span></h1>
+       <img src="img6.jpg" >
+       <h1>cappacino<span> $1</span></h1>
+         <h3>tasty and healty</h3>
+           
+            <div class="price"> 
+          </div>
+            <a href="#" class="btn">add to cart</a>
+        </div>
+
+
+        <div class="box">
+          <h1>-burgers-</h1>
+            <img src="blog2.jpg"alt="">
+         <h1>juicy cheese<span> $1</span></h1>
+        <img src="burger1.jpg"alt="">
+       <h1>minty veg<span> $2</span></h1>
+    <img src="burger3.jpg" alt="">
+<h1>spicy aloo<span> $3</span></h1>
+<img src="burger4.jpg" alt="">
+<h1>veg tandoori<span> $2</span></h1>
+
+            <h3>tasty and delicious</h3>
+
+            <div class="price"></div>
+            <a href="#" class="btn">add to cart</a>
+        </div>
+
+
+        <div class="box">
+            <h1>-pizza-</h1>
+            <img src="blog3.jpg" alt="">
+           <h1>vaggie pizza<span> $4</span></h1>
+            <img src="pizza1.jpg" alt="">
+         <h1>papperoni pizza<span> $2</span></h1>
+        <img src="pizza2.jpg"alt="">
+ <h1>cheese pizza<span> $3</span></h1>
+  <img src="pizza4.jpg"alt="">
+ <h1>meat pizza<span> $2</span></h1>
+            <h3>spicy and delicious</h3>
+      <div class="price"></div>
+            <a href="#" class="btn">add to cart</a>
+        </div>
+
+
+        <div class="box">
+            <h1>-french fries-</h1>
+            <img src="fries.webp" alt="">
+ <h1>crinkle-cut fires<span> $1</span></h1>
+ <img src="fries1.jpg" alt="">
+ <h1>loaded fries<span> $2</span></h1>
+ <img src="fries2.jpg" alt="">
+ <h1>loaded cheesy fries<span> $3</span></h1>
+ <img src="fries4.jpg"alt="">
+ <h1>chili cheese fries<span> $2</span></h1>
+<h3>tasty and yummy</h3>
+ <div class="price"></div>
+            <a href="#" class="btn">add to cart</a>
+        </div>
+
+
+
+        <div class="box">
+           <h1>-cold coffe-</h1>
+            <img src="blog4.jpg"  alt="">
+    <h1> choco chipes<span> $1</span></h1>
+ <img src="coldcoffe1.webp" alt="">
+ <h1>mocha coffee<span> $2</span></h1>
+ <img src="coldcoffe2.jpeg"alt="">
+ <h1>choco brownie<span> $3</span></h1>
+<img src="coldcoffe3.jpg"alt="">
+ <h1>ferrero rochers<span> $1</span></h1>
+
+            <h3>sweet and creamy</h3>
+
+            <div class="price"></div>
+            <a href="#" class="btn">add to cart</a>
+        </div>
+
+
+ <div class="box">
+           <h1>-sandwich-</h1>
+            <img src="sand1.jpg"  alt="">
+    <h1>aloo grilled sandwich<span> $1</span></h1>
+ <img src="sand3.jpg" alt="">
+ <h1>seafood sandwich<span> $3</span></h1>
+ <img src="sand4.webp"alt="">
+ <h1>grilled cheese<span> $2</span></h1>
+<img src="sand5.webp"alt="">
+ <h1>chicken sandwich<span> $1</span></h1>
+
+            <h3>tasty and yummy</h3>
+
+            <div class="price"></div>
+            <a href="#" class="btn">add to cart</a>
+        </div>
+
+
+    </div>
+  </section>
+
+<section class="product" id="product">
+    <h1 class="heading">our<span> products</span></h1>
+    <div class="box-container">
+        <div class="box">
+   <div class="image">
+
+    <img src="coffe1.jpg" alt="">
+   </div>
+   <div class="content">
+    <h3>fresh coffee</h3>
+    <div class="price">$8.99><span>$8.99</span></div>
+   </div>
+    </div>
+</div>
+<div class="box-container">
+        <div class="box">
+   <div class="image">
+
+    <img src="masala.webp" alt="">
+   </div>
+   <div class="content">
+    <h3>burger masala</h3>
+    <div class="price">$10.99<span>$10.99</span></div>
+   </div>
+    </div>
+</div>
+<div class="box-container">
+        <div class="box">
+   <div class="image">
+
+    <img src="masala2.webp" alt="">
+   </div>
+   <div class="content">
+    <h3>pizza masala</h3>
+    <div class="price">$12.99<span>$12.99</span></div>
+   </div>
+    </div>
+</div>
+   </section>
+
+
+ <section class="contact" id="contact">
+    <h1 class="heading"><span>contact</span> us</h1>
+    <div class="row">
+        <iframe  class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3810.1745245863085!2d74.17569801384695!3d17.25878948815581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc1834a912d9def%3A0x4c45ef37d2238894!2sCafe%20Hash%20Tag!5e0!3m2!1sen!2sin!4v1665770402711!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<form action="">
+
+            <h3>get in touch</h3>
+            <div class="inputbox">
+                <span class="fas fa-user"></span>
+                <input type="text" placeholder="name">
+            </div>
+            <div class="inputbox">
+                <span class="fas fa-envelope"></span>
+                <input type="email" placeholder="email">
+            </div>
+            <div class="inputbox">
+                <span class=" fas fa-phone"></span>
+                <input type="number" placeholder="number">
+            </div>
+           <input type="submit" value="contact now" class="btn">
+        </form>
+</div>
+  </section>
+
+<section class="blog" id="blog">
+    <h1 class="heading">our <span>blogs</span></h1>
+    <div class="box-container">
+        <div class="box">
+            <div class="image">
+                <img src="blog1.jpg" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="title"> tasty and refreshing coffee</a>
+                <span>by admin /21st ,may 2021</span>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque inventore quod et commodi architecto id. Aut asperiores sed quas vero.</p>
+               <a href="#" class="btn">read more</a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="image">
+                <img src="blog2.jpg" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="title"> delicious burgers</a>
+                <span>by admin /21st ,may 2021</span>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque inventore quod et commodi architecto id. Aut asperiores sed quas vero.</p>
+               <a href="#" class="btn">read more</a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="image">
+                <img src="blog3.jpg" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="title"> tasty  and yummy pizza</a>
+                <span>by admin /21st ,may 2021</span>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque inventore quod et commodi architecto id. Aut asperiores sed quas vero.</p>
+               <a href="#" class="btn">read more</a>
+            </div>
+        </div>
+<div class="box">
+            <div class="image">
+                <img src="blog4.jpg" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="title"> sweet and creamy cold coffee</a>
+                <span>by admin /21st ,may 2021</span>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque inventore quod et commodi architecto id. Aut asperiores sed quas vero.</p>
+               <a href="#" class="btn">read more</a>
+            </div>
+        </div>
+    </div>
+  </section>
+<section class="footer">
+    <div class="foot">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+   
+<h1>priyankashinde7767@gmail.com</h1>
+</div>
+    <div class="link">
+        <a href="#">home</a>
+        <a href="#">about</a>
+        <a href="#">menu</a>
+        <a href="#">product</a>
+        <a href="#">contact</a>
+        <a href="#">blog</a>
+    </div>
+  </section>
+</body>
+</html>
